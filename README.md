@@ -1,7 +1,5 @@
 # email-deep-validator
 
-[![Build Status](https://travis-ci.org/getconversio/email-deep-validator.svg?branch=master)](https://travis-ci.org/getconversio/email-deep-validator)
-
 Verify email address checking MX records, and SMTP connection.
 
 ## Installation
@@ -17,10 +15,12 @@ Install the module through NPM:
 Include the module, create a new `EmailValidator` object and call `verify` method:
 
 ```javascript
-const EmailValidator = require('email-deep-validator');
+const EmailValidator = require('email-deep-validator')
 
-const emailValidator = new EmailValidator();
-const { wellFormed, validDomain, validMailbox } = await emailValidator.verify('foo@email.com');
+const emailValidator = new EmailValidator()
+const { wellFormed, validDomain, validMailbox } = await emailValidator.verify(
+  'foo@email.com'
+)
 // wellFormed: true
 // validDomain: true
 // validMailbox: true
@@ -29,7 +29,9 @@ const { wellFormed, validDomain, validMailbox } = await emailValidator.verify('f
 When a domain does not exist or has no MX records, the domain validation will fail, and the mailbox validation will return `null` because it could not be performed:
 
 ```javascript
-const { wellFormed, validDomain, validMailbox } = await emailValidator.verify('foo@bad-domain.com');
+const { wellFormed, validDomain, validMailbox } = await emailValidator.verify(
+  'foo@bad-domain.com'
+)
 // wellFormed: true
 // validDomain: false
 // validMailbox: null
@@ -56,9 +58,9 @@ Default: `true`.
 
 Enable or disable mailbox checking. Only a few SMTP servers allow this, and even then whether it works depends on your IP's reputation with those servers. This library performs a best effort validation:
 
-* It returns `null` for Yahoo addresses, for failed connections, for unknown SMTP errors.
-* It returns `true` for valid SMTP responses.
-* It returns `false` for SMTP errors specific to the address's formatting or mailbox existance.
+- It returns `null` for Yahoo addresses, for failed connections, for unknown SMTP errors.
+- It returns `true` for valid SMTP responses.
+- It returns `false` for SMTP errors specific to the address's formatting or mailbox existance.
 
 Default: `true`.
 
@@ -70,10 +72,10 @@ Default: `true`.
 
 ### 2.0.0
 
-* (BREAKING) Requires node 7.6 for `async`/`await`.
-* (BREAKING) Instead of throwing on any invalidation, the lib now returns an object with which validations failed.
-* (BREAKING) Configuration property `verifyMxRecords` renamed to `verifyDomain`.
-* (BREAKING) Configuration property `verifySmtpConnection` renamed to `verifyMailbox`.
+- (BREAKING) Requires node 7.6 for `async`/`await`.
+- (BREAKING) Instead of throwing on any invalidation, the lib now returns an object with which validations failed.
+- (BREAKING) Configuration property `verifyMxRecords` renamed to `verifyDomain`.
+- (BREAKING) Configuration property `verifySmtpConnection` renamed to `verifyMailbox`.
 
 ## Contributing
 

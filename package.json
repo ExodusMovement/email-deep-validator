@@ -1,5 +1,5 @@
 {
-  "name": "email-deep-validator",
+  "name": "@exodus/email-deep-validator",
   "version": "3.3.0",
   "description": "Verify email address checking MX records, and SMTP connection.",
   "main": "lib/index.js",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/getconversio/email-deep-validator.git"
+    "url": "git+https://github.com/ExodusMovement/email-deep-validator.git"
   },
   "author": "Stefano Sala <stefano@conversio.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/getconversio/email-deep-validator/issues"
+    "url": "https://github.com/ExodusMovement/email-deep-validator/issues"
   },
   "devDependencies": {
     "chai": "^4.1.2",
