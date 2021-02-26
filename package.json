@@ -1,6 +1,6 @@
 {
   "name": "@exodus/email-deep-validator",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description": "Verify email address checking MX records, and SMTP connection.",
   "main": "lib/index.js",
   "scripts": {
