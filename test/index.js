@@ -57,6 +57,7 @@ describe('lib/index', () => {
     beforeEach(() => {
       stubResolveMx();
       stubSocket();
+      self.validator = new EmailValidator({ fromAddress: 'test@foobar.com'});
     });
 
     it('should perform all tests', () => {
