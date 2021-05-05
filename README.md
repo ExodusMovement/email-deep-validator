@@ -64,6 +64,18 @@ Enable or disable mailbox checking. Only a few SMTP servers allow this, and even
 
 Default: `true`.
 
+### `useOpenSSL`
+
+Use openssl as fallback if STARTTLS is required by email server. Only valid with `verifyMailbox` set to `true`.
+
+Default: `false`.
+
+### `ports`
+
+List of SMTP ports to try. Can be a single integer or array of integers. If array of integers, for example, `[25,467,587]`, each port will be tried, and on timeout will advance to the next port.
+
+Default: `25`.
+
 ## Testing
 
     $ npm test
